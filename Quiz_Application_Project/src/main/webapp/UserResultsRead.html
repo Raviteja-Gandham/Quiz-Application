@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Quiz/Results</title>
+<link rel="stylesheet" href="UserCrud.css"> <!-- External File -->
+</head>
+<body>
+	<p style="color: Red"><b><u>Note:</u> If you don't know your user Id! Please re-login. It will be display while logged into the portal. </b></p>
+	<!-- Read User Result Data Last attempt-->
+    <form action="userTable" method="POST">
+        <h2>User Last Result Data</h2>
+        <input type="hidden" name="action" value="resultData">
+        <label for="userId">User ID:</label>
+        <input type="number" id="userId" name="userId" placeholder="Enter your Id" required><br>
+        <button type="submit">Get Result</button>
+    </form>
+    
+    <!-- Read User Results Data past attempts
+     (All Results)-->
+    <form action="userTable" method="POST">
+        <h2>User Past Results History</h2>
+        <input type="hidden" name="action" value="resultsData">
+        <label for="userId">User ID:</label>
+        <input type="number" id="userId" name="userId" placeholder="Enter your Id" required><br>
+        <button type="submit">Get Results</button>
+    </form>
+    
+</body>
+</html>

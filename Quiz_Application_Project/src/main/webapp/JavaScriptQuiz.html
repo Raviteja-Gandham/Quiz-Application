@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="HTMLQuiz1.css"> <!-- To link css file to the html file -->
+
+</head>
+<body>
+  <nav>
+    <div class="container-fluid header">
+      <a href="HomePage.html" class="logo"><b style="color: white;">Q</b><b style="color: yellow;">u</b><b style="color: white;">i</b><b style="color: orange;">zZZ</b>
+      </a>
+      <label>JAVASCRIPT Quiz</label>
+     <div class="profile">
+      <img src="images/user.png" alt="user" height="50px" width="50px">
+      <div class="user-data">
+        <a href="LoginForm.html" onclick="confirmLogout(event)">Logout</a> <br>
+        <a href="HomePage.html" onclick="confirmHome(event)">Home</a>
+      </div>
+      </div> 
+      </div>
+  </nav>
+<div style="margin-left: 75%; color: white; font-weight: bold; font-size: 20px">Time Remaining: <span id="timer">5:00</span></div>
+<div class="container pages mt-3">
+    <label for="question1">1</label>
+    <label for="question2">2</label>
+    <label for="question3">3</label>
+    <label for="question4">4</label>
+    <label for="question5">5</label>
+    <label for="question6">6</label>
+    <label for="question7">7</label>
+    <label for="question8">8</label>
+    <label for="question9">9</label>
+    <label for="question10">10</label>
+</div>
+    <div class="container question" id="form-container">
+       <form action="SubmitQuizServletJS" method="post" id="JSquizForm" style="color: white;" onsubmit="return calculateResultsJS();">
+        
+        <!-- Add user ID and quiz name as hidden fields -->
+        <input type="hidden" name="userId" id="userId"> <!--  value="3">-->
+    	<input type="hidden" name="quizName" value="JS Quiz">
+        <input type="hidden" id="marks_Obtained" name="marks_Obtained" value="0">
+        
+        <!-- Quiz Questions -->
+        
+        <!--Question 1-->
+        <input type="radio" id="question1" name="questions" checked>
+        <div class="question-container">
+        <h2>Question 1: Which type of JavaScript language is ___</h2>
+        
+        <p> 
+            <input type="radio" id="option1" name="Q1" value="0" data-correct="false" required>
+            <label for="option1"> Object-Oriented</label>
+        </p>
+        <p> 
+            <input type="radio" id="option2" name="Q1" value="1" data-correct="true">
+            <label for="option2">Object-Based</label>
+        </p>
+        <p> 
+            <input type="radio" id="option3" name="Q1" value="0" data-correct="false">
+            <label for="option3">Assembly-language</label>
+        </p>
+        <p> 
+            <input type="radio" id="option4" name="Q1" value="0" data-correct="false">
+            <label for="option4">High-level</label>
+        </p>
+        <label for="question1" class="nav-btn">Previous</label>
+        <label for="question2" class="nav-btn">Next</label>
+    </div>
+
+        <!--Question 2-->
+        <input type="radio" id="question2" name="questions">
+        <div class="question-container">
+        <h2>Question 2: Which of the following is the correct output for the following JavaScript code:</h2>
+        <p>varx=5,y=1  
+		var obj ={ x:10}  
+		with(obj)  
+		{  
+ 		   alert(y)  
+		}  
+        </p>
+        <p> 
+            <input type="radio" id="option5" name="Q2" value="0" data-correct="false" required>
+            <label for="option5"> Error </label>
+        </p>
+        <p> 
+            <input type="radio" id="option6" name="Q2" value="0" data-correct="false">
+            <label for="option6"> 10</label>
+        </p>
+        <p> 
+            <input type="radio" id="option7" name="Q2" value="1" data-correct="true">
+            <label for="option7"> 1</label>
+        </p>
+        <p> 
+            <input type="radio" id="option8" name="Q2" value="0" data-correct="false">
+            <label for="option8"> 5 </label>
+        </p>
+        <label for="question1" class="nav-btn">Previous</label>
+        <label for="question3" class="nav-btn">Next</label>
+    </div>
+
+        <!--Question 3-->
+        <input type="radio" id="question3" name="questions">
+        <div class="question-container">
+        <h2>Question 3: Which one of the following also known as Conditional Expression?</h2>
+         <p> 
+         	<input type="radio" id="option9" name="Q3" value="0" data-correct="false" required>  
+         	<label for="option9"> Alternative to if-else </label>
+         </p>
+         <p> 
+         	<input type="radio" id="option10" name="Q3" value="0" data-correct="false">  
+			<label for="option10"> Switch statement</label>
+		 </p>
+         <p> 
+         	<input type="radio" id="option11" name="Q3" value="0" data-correct="false">  
+			<label for="option11"> If-then-else statement</label>
+		 </p>
+         <p> 
+         	<input type="radio" id="option12" name="Q3" value="1" data-correct="true">  
+			<label for="option12"> immediate if </label>
+		 </p>
+         <label for="question2" class="nav-btn">Previous</label>
+         <label for="question4" class="nav-btn">Next</label>
+        </div>
+
+        <!--Question 4-->
+        <input type="radio" id="question4" name="questions">
+        <div class="question-container">
+        <h2>Question 4:  In JavaScript, what is a block of statement?</h2>
+         <p> 
+			<input type="radio" id="option13" name="Q4" value="0" data-correct="false" required>  
+			<label for="option13"> Conditional block </label>
+		</p>
+         <p> 
+			<input type="radio" id="option14" name="Q4" value="0" data-correct="false">  
+			<label for="option14"> block that contains a single statement</label>
+		</p>
+         <p> 
+			<input type="radio" id="option15" name="Q4" value="0" data-correct="false">  
+			<label for="option15"> both conditional block and a single statement</label>
+		</p>
+         <p> 
+			<input type="radio" id="option16" name="Q4" value="1" data-correct="true">  
+			<label for="option16">  block that combines a number of statements into a single compound statement </label>
+		</p>
+         <label for="question3" class="nav-btn">Previous</label>
+         <label for="question5" class="nav-btn">Next</label>
+        </div>
+
+         <!--Question 5-->
+         <input type="radio" id="question5" name="questions">
+         <div class="question-container">
+         <h2>Question 5: The "function" and " var" are known as?</h2>
+          <p> 
+			 <input type="radio" id="option17" name="Q5" value="0" data-correct="false" required>  
+			 <label for="option17">Keywords </label>
+		  </p>
+          <p> 
+			 <input type="radio" id="option18" name="Q5" value="0" data-correct="false">  
+			 <label for="option18">  Data types</label>
+		  </p>
+          <p> 
+			 <input type="radio" id="option19" name="Q5" value="1" data-correct="true">  
+			 <label for="option19"> Declaration statements </label>
+		  </p>
+          <p> 
+			 <input type="radio" id="option20" name="Q5" value="0" data-correct="false">  
+			 <label for="option20"> Prototypes </label>
+		  </p>
+          <label for="question4" class="nav-btn">Previous</label>
+          <label for="question6" class="nav-btn">Next</label>
+         </div>
+
+         <!--Question 6-->
+         <input type="radio" id="question6" name="questions">
+         <div class="question-container">
+         <h2>Question 6: Which of the following is the correct output for the following JavaScript code?</h2>
+         <p>var x=3;  <br>
+			var y=2;  <br>
+			var z=0;  <br>
+			If(x==y)  <br>
+			document.write(x);  <br>
+			elseif(x==y)  <br>
+			document.write(x);  <br>
+			else  <br>
+			document.write(z);  <br>
+		</p>
+          <p> 
+			 <input type="radio" id="option21" name="Q6" value="0" data-correct="false" required>  
+			 <label for="option21"> 3 </label>
+		  </p>
+          <p> 
+			 <input type="radio" id="option22" name="Q6" value="0" data-correct="false">  
+			 <label for="option22"> Error </label>
+		  </p>
+          <p> 
+			 <input type="radio" id="option23" name="Q6" value="0" data-correct="false">  
+			 <label for="option23"> 2 </label>
+		  </p>
+          <p> 
+			 <input type="radio" id="option24" name="Q6" value="1" data-correct="true">  
+			 <label for="option24"> 0 </label>
+		  </p>
+          <label for="question5" class="nav-btn">Previous</label>
+          <label for="question7" class="nav-btn">Next</label>
+         </div>
+
+          <!--Question 7-->
+           <input type="radio" id="question7" name="questions">
+          <div class="question-container">
+          <h2>Question 7: Which of the following is the correct output for the following JavaScript code?</h2>
+           <p>
+           	var grade='Z';  
+			var result;  
+			switch(grade)  
+			{  
+			case'A':  
+        			result+="10";  
+			case'B':  
+        			result+=" 9";  
+			case'C':  
+        			result+=" 8";  
+			default:  
+        			result+=" 0";  
+			}  
+			document.write(result); 
+			</p>
+           <p> 
+			  <input type="radio" id="option25" name="Q7" value="0" data-correct="false" required>  
+			  <label for="option25"> 10 </label>
+			</p>
+           <p> 
+			  <input type="radio" id="option26" name="Q7" value="0" data-correct="false">  
+			  <label for="option26"> 17 </label>
+			</p>
+           <p> 
+			  <input type="radio" id="option27" name="Q7" value="1" data-correct="true">  
+			  <label for="option27"> 0 </label>
+			</p>
+           <p> 
+			  <input type="radio" id="option28" name="Q7" value="0" data-correct="false">  
+			  <label for="option28"> 18 </label>
+			</p>
+           <label for="question6" class="nav-btn">Previous</label>
+           <label for="question8" class="nav-btn">Next</label>
+          </div>
+
+          <!--Question 8-->
+          <input type="radio" id="question8" name="questions">
+          <div class="question-container">
+          <h2>Question 8: Which of the following variables takes precedence over the others if the names are the same?</h2>
+           <p> 
+			  <input type="radio" id="option29" name="Q8" value="0" data-correct="false" required>  
+			  <label for="option29"> Global variable </label>
+		   </p>
+           <p> 
+			  <input type="radio" id="option30" name="Q8" value="1" data-correct="true">  
+			  <label for="option30"> The local element </label>
+		   </p>
+           <p> 
+			  <input type="radio" id="option31" name="Q8" value="0" data-correct="false">  
+			  <label for="option31">The two of the above </label>
+		   </p>
+           <p> 
+			  <input type="radio" id="option32" name="Q8" value="0" data-correct="false">  
+			  <label for="option32"> None of the above </label>
+		   </p>
+           <label for="question7" class="nav-btn">Previous</label>
+           <label for="question9" class="nav-btn">Next</label>
+          </div>
+
+          <!--Question 9-->
+          <input type="radio" id="question9" name="questions">
+          <div class="question-container">
+          <h2>Question 9: Which of the following type of a variable is volatile?</h2>
+           <p> 
+				<input type="radio" id="option37" name="Q9" value="0" data-correct="false" required>  
+				<label for="option37"> Volatile variable</label>
+			</p>
+           <p> 
+				<input type="radio" id="option38" name="Q9" value="0" data-correct="false">  
+				<label for="option38">  Dynamic variable</label>
+			</p>
+           <p> 
+				<input type="radio" id="option39" name="Q9" value="1" data-correct="true">  
+				<label for="option39">Mutable variable</label>
+			</p>
+           <p> 
+				<input type="radio" id="option40" name="Q9" value="0" data-correct="false">  
+				<label for="option40">  Immutable variable</label>
+			</p>
+           <label for="question8" class="nav-btn">Previous</label>
+           <label for="question10" class="nav-btn">Next</label>
+          </div>
+
+           <!--Question 10-->
+           <input type="radio" id="question10" name="questions">
+           <div class="question-container">
+           <h2>Question 10: In the JavaScript, which one of the following is not considered as an error?</h2>
+            <p> 
+				<input type="radio" id="option41" name="Q10" value="0" data-correct="false" required>  
+				<label for="option41">Syntax error</label>
+			</p>
+            <p> 
+				<input type="radio" id="option42" name="Q10" value="1" data-correct="true">  
+				<label for="option42"> Division by zero</label>
+			</p>
+            <p> 
+				<input type="radio" id="option43" name="Q10" value="0" data-correct="false">  
+				<label for="option43"> Missing of semicolons</label>
+			</p>
+            <p> 
+				<input type="radio" id="option44" name="Q10" value="0" data-correct="false">  
+				<label for="option44"> Missing of Bracket</label>
+			</p>
+            	<label for="question9" class="nav-btn">Previous</label>
+           </div>
+           <button type="submit">Submit</button>
+      </form> 
+    </div>
+    <div class="progress mt-3">
+  <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+    
+    <script src="HTMLQuiz2.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+body{
+    background-image: url('images/Quiz_Right.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+ .header{
+  background-color: black;
+  color: yellow;
+  font-size: 30px;
+  font-weight: bold;
+  height: 8vh;
+ }
+ .header label{
+  transform: translateX(40vw);
+  
+ }
+ .header img{
+  transform: translateX(90vw);  /* Only to transfer on x-axis direction*/
+  cursor: pointer;
+  background-image: url('user.png');
+  margin-top: -88px;
+ }
+.header .logo{
+  text-decoration: none;
+}
+ form{
+   background-color: rgb(3, 3, 49);  /* To add background color */
+   width: fit-content;
+   margin-top: 3%;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* to apply box shadow for the form*/
+   padding: 80px;
+   border-radius: 5px;
+ }
+ p{
+     font-size: 20px; /* size of the text */
+     text-align: left;  /* To start the text from left */
+     margin-top: 20px; /* gap between the text (options) */
+ }
+ h2{
+     text-align: left;
+     
+ }
+ div .questions{
+     width: fit-content;
+ }
+ form .nav-btn,button{
+   padding: 10px;
+   padding-left: 20px;  /* to expand the space from left border to content */
+   padding-right: 20px;  /* to expand the space from right border to content */
+   margin-top: 3rem;
+   border-radius: 6px;
+   font-weight: bold;
+   cursor: pointer;
+   background-color: white;
+   color: black;
+   margin: 20px;
+ }
+ form .nav-btn:hover{
+   background-color: rgb(203, 203, 216);
+ }
+form input[type="radio"]{
+   width: 15px;    /* To increase the radio button width */
+   height: 15px;   /* To increase the radio button height */
+}
+.question-container{
+     display: none;  /* Hide all questions by default */
+}
+input[type="radio"]{
+ display: none;  /* Hide the radio buttons */
+}
+input[type="radio"]:checked+ .question-container{
+ display: block; /* Show the selected question */
+}
+p input[type="radio"]{
+ display: unset; /* To visible a radio buttons which are inside <p> tag */
+}
+.pages label{
+ color: white;
+ background-color: blue;
+ cursor: pointer;
+ padding: 10px 15px;
+ margin: 0 5px;
+ border-radius: 5px;
+ display: inline-block;
+ font-weight: bold;
+}
+.pages label:hover{
+ background-color: darkblue;
+}
+button:hover{
+  color: white;
+  background-color: teal;
+}
+@media (max-width: 768px) { /* use to create a responsive webpage*/
+ .pages label{
+   margin: 5px; /* to get a gap between the label (paginations) when you reize the page */
+ }
+ .header label{
+  margin-left: -120px;
+ }
+ .header img{
+  transform: translateX(45vw);
+ }
+}
+
+.user-data{
+  display: none;
+  font-size: large;
+  background-color: black;
+  width: fit-content;
+  padding: 10px 30px;
+  transform: translateX(90vw);
+  margin-top: -32px;
+}
+.user-data a{
+  text-decoration: none;
+  font-weight: lighter;
+  color: white;
+  width: fit-content;
+}
+.user-data a:hover{
+  color: peru;
+}
+.profile:hover .user-data{
+  display: block;
+}
+
+input{
+	border-radius: 5px;
+}
+
+ #timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+.result {
+  font-weight: bold;
+  margin-top: 5px;
+}

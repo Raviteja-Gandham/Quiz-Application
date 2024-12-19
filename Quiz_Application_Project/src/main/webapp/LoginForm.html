@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz/Login Page</title>
+
+     <link rel="stylesheet" href="LoginForm.css"> <!-- External File from Login.css -->
+</head>
+<body>
+    <div class="login-box">
+    	<center>
+    		<h1><span style="color: white;">Welcome</span><span style="color: yellow;"> To </span><b style="color: white;"> Qui</b><b style="color: orange;">zZZ</b></h1>
+        </center>
+        <div class="admin-form">
+        <form action="admin_login" method="post">
+            <h2>Admin Login</h2>
+            
+            <!-- For Admin login -->
+            <input type="radio" id="admin" name="login-option">
+            <div class="admin-login">
+                <input type="number" name="admin_id" placeholder="Admin Id" minlength="5" required>
+                <input type="password" name="admin_password" placeholder="Password" minlength="8" required> <br>
+                <button type="submit">Login</button> 
+            </div>
+            </form>
+        </div>
+            <div class="user-form">
+                <form action="admin_login" method="post">
+                <h2>User Login</h2>
+                
+                <!-- For user login -->
+                <input type="radio" id="user" name="login-option">
+                <div class="admin-login">
+                    <input type="email" name="email" placeholder="email" minlength="5" required>
+                    <input type="password" name="user_password" placeholder="Password" minlength="8" required> <br>
+                    <button type="submit">Login</button> <br><br>
+                    <label for="Register"><a href="Register.html" class="Register">Register ?</a> New User</label> <br> <br>
+                <label for="forgot-password"><a href="ForgotPassword.html" class="forgot-password">Forgot Password?</a></label>
+                </div> 
+                </form>
+            </div>
+          </div>
+ 
+</body>
+</html>

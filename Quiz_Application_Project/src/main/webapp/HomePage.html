@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="HomePage.css">
+
+</head>
+<body>
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+          <div class="container-fluid">
+           <!--<a class="navbar-brand" href="#"><img src="D:\Java Developer Intern\Quiz Logo.png" alt="Logo" height="50" width="100"></a>-->
+           <div class="logo">
+                <a href="HomePage.html">
+                    <b style="color: white;">Q</b><b style="color: yellow;">u</b><b style="color: white;">i</b><b style="color: orange;">zZZ</b>
+                </a>
+           </div>
+           
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">  <!--To give links to navigate target-->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#details">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Courses">Courses</a>
+                </li>
+                <li class="nav-item">   <!-- right offcanavas -->
+                  <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#right-side-window" href="#">Profile</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="LoginForm.html">Logout</a>
+                </li>    
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!--Card effect using html and CSS-->
+    <div class="container-fluid mt-5 pt-1" id="content">
+        <div class="mb-4" style="margin-top:60px">
+            <h2>Select Quiz</h2>
+            <div class="card-list">
+                <Table cellpadding="20" cellspacing="10" id="Courses">
+                    <tr>
+                        <td>
+                            <img src="images/html quiz pic.png" alt="html_pic" height="300px" width="440px">
+                            <figcaption>Quiz on HTML</figcaption>
+                            <figure><b>10</b> Questions | <b>5</b> Minutes</figure>
+                            <a href="Take_Exam.html"><button class="btn" id="btn1">Start</button></a>
+                        </td>
+                        <td>
+                            <img src="images/css pic.jpg" alt="Css_pic" height="300px" width="440px">
+                            <figcaption>Quiz on CSS</figcaption>
+                            <figure><b>10</b> Questions | <b>5</b> Minutes</figure>
+                            <a href="Take_Exam.html"><button class="btn" id="btn2">Start</button></a>
+                        </td>
+                        <td>
+                            <img src="images/jsQuiz pic.png" alt="js_pic" height="300px" width="440px">
+                            <figcaption>Quiz on JavaScript</figcaption>
+                            <figure><b>10</b> Questions | <b>5</b> Minutes</figure>
+                            <a href="Take_Exam.html"><button class="btn" id="btn3">Start</button></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/html,css,js combo pic.jpg" alt="combo_pic" height="300px" width="440px">
+                            <figcaption>Quiz on HTML,CSS & JS</figcaption>
+                            <figure><b>10</b> Questions | <b>5</b> Minutes</figure>
+                            <a href="Take_Exam.html"><button class="btn" id="btn4">Start</button></a>
+                        </td>
+                        <td>
+                            <img src="images/Java_Quiz_Pic.jpg"ava_Quiz_Pic.jpg" alt="Java_pic" height="300px" width="440px">
+                            <figcaption>Quiz on Java</figcaption>
+                            <figure><b>10</b> Questions | <b>5</b> Minutes</figure>
+                            <a href="Take_Exam.html"><button class="btn" id="btn4">Start</button></a>
+                        </td>
+                        <td>
+                            <img src="images/Sql1_pic.jpg" alt="SQL_pic" height="300px" width="440px">
+                            <figcaption>Quiz on SQL</figcaption>
+                            <figure><b>10</b> Questions | <b>5</b> Minutes</figure>
+                            <a href="Take_Exam.html"><button class="btn" id="btn4">Start</button></a>
+                        </td>
+                    </tr>
+                </Table>
+            </div>
+        </div>
+        
+       
+        <div class="container-fluid mb-2" id="details"> <!--mb - Margin bottom-->
+            <footer class="row">
+            <div class="address col-md-4">
+                    <h5>Address</h5> <br>
+                    Hyderabad - 500030 <br><br>
+                    India
+                </div>
+            <div class="contact col-md-4">
+                <h5>Contact </h5><br>
+                    <img src="images/mail.png" alt="Mail"> &nbsp;&nbsp; gandhamraviteja2001@gmail.com <br><br>
+                    <img src="images/phone-icon.png" alt="mobile"> &nbsp;&nbsp; +91 - 6302232951
+                </div>
+                <div class="social-media col-md-4">
+                    <h5>Social Media </h5><br>
+                    <a href=""><img src="images/Whatsapp_img.png" class="img1" height="50" width="50" alt="WhatsApp"></a>
+                    &nbsp;&nbsp;  <!--To take whitespace between the elements or images-->
+                    <a href=""><img src="images/linkedIn3.webp" class="img2" height="40" width="40" alt="LinkedIn"></a>
+                    &nbsp;&nbsp;    <!--To take whitespace between the elements or images-->
+                    <a href=""><img src="images/github1.png" class="img3" height="65" width="65" alt="GitHub"></a>
+                </div>
+            </footer>
+        </div>
+
+        <!--Applied OffCanvas for Profile-->
+       <div class="offcanvas offcanvas-end" id="right-side-window">
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="name"></h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+    	<h2>Profile Info</h2>
+        <p id="user-id" style="display: none;">User ID: </p> <!-- Initially hidden -->
+        <div class="Details" style="font-size: 20px; padding:10px;">
+        <a href="UserReadOperation.html" style="text-decoration:none;">See Details</a> <br>
+        <a href="UserUpdate.html" style="text-decoration:none;">Update Details</a> <br>
+        <a href="UserDelete.html" style="text-decoration:none;">Delete Profile</a><br>
+        <a href="UserResultsRead.html" style="text-decoration:none;">See Your Results</a><br>
+        
+        </div>
+        <!-- <p id="user-role">Role: </p>-->
+        <button class="btn btn-secondary" data-bs-dismiss="offcanvas" style="margin-top: 10%; margin-left: 20px;">Close</button>
+    </div>
+</div>
+</div>
+
+</body>
+</html> 

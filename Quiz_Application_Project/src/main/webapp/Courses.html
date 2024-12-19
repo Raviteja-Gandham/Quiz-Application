@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .course-list {
+            margin-bottom: 20px;
+        }
+        .course-list select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select a Course and Take the Test</h2>
+        <div class="course-list">
+            <select id="courseSelect">
+                <option value="">-- Select a Course --</option>
+                <option value="HTML">HTML</option>
+            </select>
+        </div>
+        <button id="startTest">Take Test</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+    
+    const userId = 1; // Assume user ID is known after login
+
+ // Fetch courses from the backend
+ document.addEventListener("DOMContentLoaded", () => {
+     fetch("/courses")
+         .then(response => response.json())
+         .then(data => {
+             const courseSelect = document.getElementById("courseSelect");
+             data.forEach(course => {
+                 const option = document.createElement("option");
+                 option.value = course.id;
+                 option.textContent = course.name;
+                 courseSelect.appendChild(option);
+             });
+         })
+         .catch(err => console.error("Error fetching courses:", err));
+ });
+
+ // Handle test submission
+ document.getElementById("startTest").addEventListener("click", () => {
+     const courseId = document.getElementById("courseSelect").value;
+
+     if (!courseId) {
+         alert("Please select a course!");
+         return;
+     }
+
+     // Simulate taking the test and generating a score
+     const score = Math.floor(Math.random() * 100);
+
+     // Save the result to the backend
+     fetch("/saveTest", {
+         method: "POST",
+         headers: { "Content-Type": "application/x-www-form-urlencoded" },
+         body: "courseId=${courseId}&score=${score}&userId=${userId}"
+     })
+         .then(response => response.text())
+         .then(message => {
+             if (message === "Success") {
+                 document.getElementById("result").textContent = "Test completed! Your score: ${score}";
+             } else {
+                 document.getElementById("result").textContent = "Error saving test result.";
+             }
+         })
+         .catch(err => console.error("Error saving test result:", err));
+ });
+     	
+    </script>
+</body>
+</html>

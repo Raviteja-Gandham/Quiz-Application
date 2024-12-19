@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="UserCrud.css"> <!-- External File -->
+</head>
+<body>
+<p style="color: Red"><b><u>Note:</u> If you don't know your user Id! Please re-login. It will be display while logged into the portal. </b></p>
+	<!-- Update User Result Data Last attempt-->
+    <form action="userTable" method="POST">
+        <h2>User Result Update</h2>
+        <input type="hidden" name="action" value="resultUpdate">
+        <label for="userId">User ID:</label>
+        <input type="number" id="userId" name="userId" placeholder="Enter your Id" required><br>
+        <label for="newMarks">New Marks:</label>
+        <input type="number" id="newMarks" name="newMarks" placeholder="Enter your New Marks" required><br>
+        <label for="quizName">Quiz Name:</label> <br><br>
+        
+        <!--  drop down menu -->
+        <select name="quizName" id="quizName" style="padding: 10px; border-radius: 4px; width: 110%;" required> <br>
+            <option value="" disabled selected>-- Select Quiz --</option>
+            <option value="HTML Quiz">HTML Quiz</option>
+            <option value="CSS Quiz">CSS Quiz</option>
+            <option value="SQL Quiz">SQL Quiz</option>
+            <option value="JS Quiz">JS Quiz</option>
+            <option value="Combo Quiz">Combo Quiz</option>
+            <option value="JAVA Quiz">JAVA Quiz</option>
+        </select>
+        <button type="submit">Update Result</button>
+    </form>
+</body>
+</html>

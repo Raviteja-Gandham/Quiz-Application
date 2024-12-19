@@ -1,0 +1,107 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    }
+    .navbar{
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+    .nav-link {
+        margin-left: 10vw;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        width: fit-content; /* it will be cover up to the content only not exceeds*/
+        /*font-size: 2vh;*/
+    }
+    .nav-link:hover{
+        color: orange;
+    }
+    .card-list table{
+        background-color: rgb(240, 240, 240);
+        box-shadow: rgb(138, 72, 72);
+    }
+    @media (max-width: 768px) { /* use to create a responsive webpage*/
+    .card-list table{
+        display: block;
+        width: 100%;
+    }
+    .card-list table tr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-list table td {
+        margin-bottom: 20px;
+    }
+    .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+    .address, .contact, .social-media {
+        text-align: center;
+        margin: 20px 0;
+    }
+}
+    figcaption{
+        font-weight: bold;
+        font-size: large;
+    }
+    figure{
+        font-size: large;
+    }
+   
+    .btn{
+        margin-left: 380px;
+        margin-top: -100px;
+        background-color: teal;
+        color: white;
+    }
+    .btn:hover{
+        color: orange;
+        background-color: teal;
+    }
+    input,.search-btn{
+        border-radius: 10px;
+        padding: 5px;
+       
+    }
+    input{
+        margin-left: 7vw;
+    }
+    footer{
+       
+        background-color: grey;  /* black*/
+        color: white;
+        padding: 0 0 30px 0;
+    }
+    footer h5{
+        font-weight: bold;
+        color: yellow;
+    }
+   
+    .address,.contact,.social-media{
+        float: left;
+        margin-top: 10vh;
+    }
+    
+    .logo a{
+        font-size: 30px; /*3vh*/
+        text-decoration: none;
+    }
+    .highlight {
+        background-color: yellow;
+        color: black;
+    }
+    #content div {
+        line-height: 1.6;
+      }
+      
+      .highlight {
+        background-color: yellow;
+      }
+      
+.Details a:hover{
+ 	
+ 	color: teal;
+ }

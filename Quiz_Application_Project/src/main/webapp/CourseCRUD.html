@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin CRUD Operations</title>
+</head>
+<body>
+    <h1>Admin Portal</h1>
+
+    <!-- Add Question -->
+    <form action="course" method="POST">
+        <h2>Add Question</h2>
+        <input type="hidden" name="action" value="addQuestion">
+        <label for="courseId">Course ID:</label>
+        <input type="number" id="courseId" name="courseId" required><br>
+        <label for="question">Question:</label>
+        <textarea id="question" name="question" required></textarea><br>
+        <label for="answer">Answer:</label>
+        <textarea id="answer" name="answer" required></textarea><br>
+        <button type="submit">Add Question</button>
+    </form>
+    <hr>
+
+    <!-- Delete Question -->
+    <form action="course" method="POST">
+        <h2>Delete Question</h2>
+        <input type="hidden" name="action" value="deleteQuestion">
+        <label for="questionId">Question ID:</label>
+        <input type="number" id="questionId" name="questionId" required><br>
+        <button type="submit">Delete Question</button>
+    </form>
+    <hr>
+
+    <!-- Update Question -->
+    <form action="course" method="POST">
+        <h2>Update Question</h2>
+        <input type="hidden" name="action" value="updateQuestion">
+        <label for="questionId">Question ID:</label>
+        <input type="number" id="questionId" name="questionId" required><br>
+        <label for="newQuestion">New Question:</label>
+        <textarea id="newQuestion" name="newQuestion" required></textarea><br>
+        <label for="newAnswer">New Answer:</label>
+        <textarea id="newAnswer" name="newAnswer" required></textarea><br>
+        <button type="submit">Update Question</button>
+    </form>
+    <hr>
+
+    <!-- Add Course -->
+    <form action="course" method="POST">
+        <h2>Add Course</h2>
+        <input type="hidden" name="action" value="addCourse">
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" name="courseName" required><br>
+        <label for="courseDescription">Course Description:</label>
+        <textarea id="courseDescription" name="courseDescription" required></textarea><br>
+        <button type="submit">Add Course</button>
+    </form>
+</body>
+</html>
